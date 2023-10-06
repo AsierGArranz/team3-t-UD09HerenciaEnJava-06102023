@@ -25,9 +25,8 @@ public class Electrodomestico {
 	public Electrodomestico(double precioBase, String color, char consumoEnergetico, double peso) {
 		
 		comprobarConsumoEnergetico(consumoEnergetico);
-
+		comprobarColor(color);
 		this.precioBase = precioBase;
-		this.color = color;
 		this.peso = peso;
 		
 	}
@@ -41,7 +40,12 @@ public class Electrodomestico {
 	}
 	
 	public void comprobarColor(String color) {
-		
+		color=color.toLowerCase();
+		if (color == "blanco" || color == "negro"  || color == "rojo"  || color == "azul"  || color == "gris") {
+			this.color = color;
+		} else {
+			color = COLOR_BASE;
+		}
 	}
 	
 	public void precioFinal() {
