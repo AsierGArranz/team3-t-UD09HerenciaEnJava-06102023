@@ -1,6 +1,6 @@
 package main;
 
-public class Videojuego {
+public class Videojuego implements Entregable{
 	
 	private String titulo = "";
 	private int horas_estimadas = 10;
@@ -51,6 +51,39 @@ public class Videojuego {
 	public String toString() {
 		return "Videojuego [titulo=" + titulo + ", horas_estimadas=" + horas_estimadas + ", entregado=" + entregado
 				+ ", genero=" + genero + ", compañia=" + compañia + "]";
+	}
+
+	@Override
+	public void entregar() {
+		entregado = true;
+	}
+
+	@Override
+	public void devolver() {
+		// TODO Auto-generated method stub
+		entregado = false;
+	}
+
+	@Override
+	public boolean isEntregado() {
+		// TODO Auto-generated method stub
+		return entregado;
+	}
+
+	@Override
+	public int compareTo(Object a) {
+		// TODO Auto-generated method stub
+		if(a.getClass() == Videojuego.class) {
+			Videojuego b = (Videojuego)a;
+			if(b.getHoras_estimadas() > this.getHoras_estimadas()) {
+				return 1;
+			}else if(b.getHoras_estimadas() < this.getHoras_estimadas()) {
+				return -1;
+			}else {
+				return 0;
+			}
+		}
+		return 0;
 	}
 	
 	

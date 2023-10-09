@@ -1,6 +1,6 @@
 package main;
 
-public class Serie {
+public class Serie implements Entregable{
 	
 	private String titulo;
 	private int numTemporadas;
@@ -78,6 +78,35 @@ public class Serie {
 	public String toString() {
 		return "Serie [titulo=" + titulo + ", numTemporadas=" + numTemporadas + ", entregado=" + entregado + ", genero="
 				+ genero + ", creador=" + creador + "]";
+	}
+
+	@Override
+	public void entregar() {
+
+		entregado = true;
+	}
+
+	@Override
+	public void devolver() {
+		// TODO Auto-generated method stub
+		entregado = false;
+
+	}
+
+	@Override
+	public int compareTo(Object a) {
+		// TODO Auto-generated method stub
+		if(a.getClass() == Serie.class) {
+			Serie b = (Serie)a;
+			if(b.getNumTemporadas() > this.getNumTemporadas()) {
+				return 1;
+			}else if(b.getNumTemporadas() < this.getNumTemporadas()) {
+				return -1;
+			}else {
+				return 0;
+			}
+		}
+		return 0;
 	}
 	
 	
