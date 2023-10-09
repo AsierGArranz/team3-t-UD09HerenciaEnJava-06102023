@@ -24,4 +24,14 @@ public class Raices {
 		return getDiscriminante()==0;
 	}
 	
+	public void calcular() {
+		if (tieneRaices()) {
+			System.out.println(((-b) + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
+			System.out.println(((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
+		} else if (tieneRaiz()) {
+			System.out.println(((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
+		} else {
+			System.out.println("No tiene solución");
+		}
+	}
 }
