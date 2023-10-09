@@ -25,13 +25,19 @@ public class Raices {
 	}
 	
 	public void calcular() {
-		if (tieneRaices()) {
-			System.out.println(((-b) + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
-			System.out.println(((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
-		} else if (tieneRaiz()) {
-			System.out.println(((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
-		} else {
-			System.out.println("No tiene solución");
-		}
-	}
+        if (tieneRaices()) {
+            obtenerRaices();
+        } else if (tieneRaiz()) {
+            obtenerRaiz();
+        } else {
+            System.out.println("No tiene solución");
+        }
+    }
+    public void obtenerRaiz() {
+        System.out.println(((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
+    }
+    public void obtenerRaices() {
+        System.out.println(((-b) + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
+        System.out.println(((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a));
+    }
 }
