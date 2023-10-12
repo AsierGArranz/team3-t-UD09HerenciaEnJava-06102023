@@ -19,5 +19,10 @@ public class Espectador {
 	public double getDinero() {
 		return dinero;
 	}
+	@Override
+	public String toString() {
+		return "Espectador [nombre=" + nombre + ", edad=" + edad + ", dinero=" + dinero + "]";
+	}
+	
 	
 }
